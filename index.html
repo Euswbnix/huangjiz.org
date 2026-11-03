@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>huangjiz.org · The server side</title>
+  <meta name="description" content="The server side of Alex Huang's work: the machines and self-run services behind huangjiz.com." />
+  <meta name="theme-color" content="#070e1a" />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div id="fx-bg" aria-hidden="true"></div>
+  <div class="overlay-grid" aria-hidden="true"></div>
+
+  <nav class="nav">
+    <a class="brand" href="/">huangjiz.org</a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#machines">Machines</a>
+      <a href="https://huangjiz.com">Portfolio</a>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero">
+      <div class="hero-note">Infrastructure - 2026</div>
+      <h1 class="hero-title">The server <span class="accent">side.</span></h1>
+      <div class="hero-desc">
+        <p>Where Alex Huang's models train and services run.</p>
+        <p>huangjiz.com is the portfolio. This domain is the machinery behind it.</p>
+      </div>
+      <div class="hero-cta">
+        <a class="btn main" href="https://hub.huangjiz.org">Open JupyterHub</a>
+        <a class="btn" href="https://huangjiz.com">Visit Portfolio</a>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="section-header"><span class="section-index">01</span><h2 class="section-title">Services</h2></div>
+      <a class="service" href="https://hub.huangjiz.org">
+        <div class="service-head">
+          <span class="service-host">hub.huangjiz.org</span>
+          <span class="tag">Invite only</span>
+        </div>
+        <p>JupyterHub across every machine below. Python, R, MATLAB and Java notebooks, plus RStudio. One login, then pick the machine that suits the job.</p>
+      </a>
+      <p class="section-note">Each service lives on its own subdomain. This page only points the way.</p>
+    </section>
+
+    <section id="machines">
+      <div class="section-header"><span class="section-index">02</span><h2 class="section-title">Machines</h2></div>
+      <div class="machines">
+        <article class="machine" data-machine="euswbnix">
+          <div class="machine-head"><h3>euswbnix</h3><span class="status" hidden><i></i><span></span></span></div>
+          <div class="machine-spec">RTX 5090 · 32 GB VRAM</div>
+          <p>The workstation. GPU training and the full toolbox of languages.</p>
+        </article>
+        <article class="machine" data-machine="Mac Studio">
+          <div class="machine-head"><h3>Mac Studio</h3><span class="status" hidden><i></i><span></span></span></div>
+          <div class="machine-spec">Apple M5 Max · 32-core GPU</div>
+          <p>Apple silicon workloads, with PyTorch running on Metal.</p>
+        </article>
+        <article class="machine" data-machine="R740xd">
+          <div class="machine-head"><h3>R740xd</h3><span class="status" hidden><i></i><span></span></span></div>
+          <div class="machine-spec">Dell PowerEdge · 112 threads</div>
+          <p>The rack server. CPU-heavy jobs and storage.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="design">
+      <div class="section-header"><span class="section-index">03</span><h2 class="section-title">How It Fits Together</h2></div>
+      <dl class="notes">
+        <div><dt>Control plane</dt><dd>A small always-on cloud node handles login and routing, so the hub stays up when a machine is switched off.</dd></div>
+        <div><dt>Compute</dt><dd>Each machine joins over an encrypted tunnel. Notebooks run on the machine you pick, not on the control plane.</dd></div>
+        <div><dt>This page</dt><dd>Plain static files on a global CDN, served from the edge nearest to you. No cookies, no analytics.</dd></div>
+      </dl>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© 2026 Alex Huang</span>
+    <span class="footer-links">
+      <a href="https://huangjiz.com">huangjiz.com</a>
+      <a href="https://github.com/Euswbnix">GitHub</a>
+    </span>
+  </footer>
+
+  <script type="module" src="starfield.js"></script>
+  <script src="status.js" defer></script>
+</body>
+</html>

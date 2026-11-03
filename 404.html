@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Not here · huangjiz.org</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#070e1a" />
+  <link rel="icon" href="/favicon.ico" />
+  <script>
+    // This domain used to serve these paths directly; they now live on subdomains.
+    (function () {
+      var p = location.pathname, s = location.search + location.hash;
+      if (/^\/(hub|user|services)(\/|$)/.test(p)) location.replace('https://hub.huangjiz.org' + p + s);
+      else if (/^\/yanji(\/|$)/.test(p)) location.replace('https://yanji.huangjiz.org' + (p.slice(6) || '/') + s);
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div id="fx-bg" aria-hidden="true"></div>
+  <div class="overlay-grid" aria-hidden="true"></div>
+  <main>
+    <section class="lost">
+      <div class="hero-note">404</div>
+      <h1>Nothing on this <span class="accent">path.</span></h1>
+      <p>Services here live on their own subdomains.</p>
+      <a class="btn" href="/">Back to huangjiz.org</a>
+    </section>
+  </main>
+</body>
+</html>
