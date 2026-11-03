@@ -12,7 +12,6 @@
     (function () {
       var p = location.pathname, s = location.search + location.hash;
       if (/^\/(hub|user|services)(\/|$)/.test(p)) location.replace('https://hub.huangjiz.org' + p + s);
-      else if (/^\/yanji(\/|$)/.test(p)) location.replace('https://yanji.huangjiz.org' + (p.slice(6) || '/') + s);
     })();
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
